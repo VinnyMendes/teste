@@ -34,7 +34,7 @@ export default function Home() {
 
   const [search, setSearch] = useState("");
 
-  const { data: accountData } = useGetAccount();
+  const { data: accountData } = useGetAccount("");
 
   const ordedData = useMemo(() => {
     return orderBy(data, "dated", "desc");
