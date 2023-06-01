@@ -24,7 +24,12 @@ export default function SignupSuccessPage() {
             Cadastro realizado
           </Heading>
           <Box>
-            <Image src="checkmark.png" alt="checkmark" width={100} height={100} />
+            <Image
+              src={"/checkmark.png"}
+              alt="checkmark"
+              width={100}
+              height={100}
+            />
           </Box>
           <Text align="center" color="#FFFF">
             Enviamos uma mensagem de confirmação para seu e-mail, por favor

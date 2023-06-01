@@ -9,18 +9,14 @@ export interface Account {
   user_id: number;
 }
 
-interface Params {
-  user_id: number;
-}
-
-async function getAccount(params: Params): Promise<Account> {
-  const { data } = await api.get<Account>(`/api/account/${params.user_id}`);
+async function getAccount(): Promise<Account> {
+  const { data } = await api.get<Account>(`/api/account`);
 
   return data;
 }
 
-export function useGetAccount(params: Params) {
-  return useQuery(["getAccount", params], () => getAccount(params), {
+export function useGetAccount() {
+  return useQuery(["getAccount"], getAccount, {
     refetchOnWindowFocus: false,
   });
 }
